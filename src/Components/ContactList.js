@@ -1,23 +1,10 @@
-// test data 
-const contacts = [
-    {
-        id: 1,
-        name: 'Lexi Marie',
-        email: 'test@gmail.com',
-        phone: '8184709146',
-    }
-]
-    
+import Contact from './Contact.js';
 
-const ContactList = () => {
+const ContactList = ({ contacts, onDelete, onHide, onToggle }) => {
     return (
         <>
             {contacts.map((contact) => (
-                <div key={contact.id}>
-                    <h3>{contact.name}</h3>
-                    <p>{contact.email}</p>
-                    <p>{contact.phone}</p>
-                </div>
+                <Contact key={contact.id} contact={contact} onDelete={onDelete} onHide={onHide} onToggle={onToggle} />
             ))}
         </>
     )
